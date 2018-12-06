@@ -1,0 +1,43 @@
+{
+  "name": "husky_and_tsx",
+  "version": "1.0.0",
+  "description": "husky_git_push_hook",
+  "main": "index.js",
+  "scripts": {
+    "test": "git commit --no-verify",
+    "build": "git push --no-verify",
+    "precommit": "npm test",
+    "prepush": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rinatsafin/husky_and_tsx.git"
+  },
+  "keywords": [
+    "husky",
+    "git",
+    "push",
+    "hook",
+    "typescript"
+  ],
+  "author": "Rinat Safin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rinatsafin/husky_and_tsx/issues"
+  },
+  "homepage": "https://github.com/rinatsafin/husky_and_tsx#readme",
+  "devDependencies": {
+    "husky": "^1.2.0",
+    "typescript": "^3.2.1"
+  },
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
