@@ -4,13 +4,15 @@
   "description": "husky_git_push_hook",
   "main": "index.js",
   "scripts": {
-    "test": "git commit --no-verify",
-    "build": "git push --no-verify",
-    "precommit": "npm test",
-    "prepush": "npm run build"
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\"",
+    "test": "tslint",
+    "lint": "tsc",
+    "precommit": "npm run lint",
+    "prepush": "npm run lint"
   },
   "husky": {
     "hooks": {
+      "pre-push": "npm test",
       "pre-commit": "npm test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
